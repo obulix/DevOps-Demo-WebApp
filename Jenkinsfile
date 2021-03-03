@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('static-code-validation') {
+    stage('Build') {
       steps {
-        sh 'mvn sonar:sonar -Dsonar.host.url=http://13.82.221.243:9000 -Dlicense.skip=true'
+        sh 'mvn clean install -Dlicense.skip=true'
       }
     }
 
